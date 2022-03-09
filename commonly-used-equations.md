@@ -32,6 +32,8 @@ The sum total of O<sub>2</sub> bound to hemoglobin and dissolved in the plasma:
 :warning: The amount of dissolved O<sub>2</sub> is so small, do not take the time to calculate it.
 Calculate the amount bound to Hb and select the answer on that is slightly higher.
 
+---
+
 ### Total flow delivered by a high-flow O<sub>2</sub> delivery device
 
 Add the air O<sub>2</sub> entrainment ratio parts together and multiply by the
@@ -39,6 +41,8 @@ flowmeter setting.
 
 > 40% air-entrainment mask running at 8 L/min.
 > 40% air O<sub>2</sub> ratio = 3:1; 3 + 1 = 4; 4 * 8 = 32 L/min
+
+---
 
 ### Determine actual flow rate of He/O<sub>2</sub> mixtures through an
 O<sub>2</sub> flowmeter
@@ -49,6 +53,8 @@ heliox flow, divide the factor 1.8 or 1.6 into the ordered flow.
 80/20 heliox mixture: multiply flowmeter reading by 1.8
 70/30 heliox mixture: multiply flowmeter reading by 1.6
 
+---
+
 ### Calculate relative humidity (RH)
 
 > RH = (Absolute humidity / Capacity) * 100
@@ -56,6 +62,8 @@ heliox flow, divide the factor 1.8 or 1.6 into the ordered flow.
 - Absolute humidity is the amount of water in a given volume of gas.
 - Capacity is the total amount of water capable of being held in the gas at a
   given temperature.
+
+---
 
 ### Calculate body humidity (BH)
 
@@ -68,6 +76,40 @@ heliox flow, divide the factor 1.8 or 1.6 into the ordered flow.
 Expressed as a percentage:
 
 > Humidity deficit (mg/L) / 44 mg/L
+
+---
+
+### Calculating Alveolar PO<sub>2</sub> (PAO<sub>2</sub>) using the alveolar air equation
+
+Shortcut equation for the exam when the barometric pressure is 747 torr:
+
+> PAO<sub>2</sub> = (7 * O<sub>2</sub>%) - (PaCO<sub>2</sub> +10)
+
+---
+
+### Calculating P(A-a)O<sub>2</sub> (A-a gradient)
+
+> PAO<sub>2</sub> - PaO<sub>2</sub>
+
+---
+
+### Calculating intrapulmonary shunt
+
+> QS/QT = (PAO<sub>2</sub> - PaO<sub>2</sub> / 20) + 3% - 4%
+
+---
+
+### Calculating systemic vascular resistance (SVR)
+
+> ((MSAP - CVP mmHg)) / QT
+
+HTe anser is in the units, mm Hg/L/min. Multiply by 80 to conver to dyne *
+seconds * cm<sup>-5</sup>.
+
+QT = cardiac output
+MSAP = mean systemic arterial pressure
+
+
 
 
 
