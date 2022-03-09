@@ -1,6 +1,6 @@
 # Commonly Used Equations
 
-## 1. Calculate time remaining in an O<sub>2</sub> cylinder
+### Time remaining in an O<sub>2</sub> cylinder
 
 > Minutes remaining = ((Cylinder pressure - stop pressure)) * Cylinder factor) / Liter Flow
 
@@ -10,13 +10,13 @@ Cylinder factors:
 
 ---
 
-## 2. Calculate duration of flow for liquid O<sub>2</sub> systems
+### Duration of flow for liquid O<sub>2</sub> systems
 
 > 344 * liquid wt (lb) / Flow
 
 ---
 
-## 3. Calculate total arterial content (CaO<sub>2</sub>), total venous content (CVO<sub>2</sub>) & AV content difference C(a-v)O<sub>2</sub>
+### Calculate total arterial content (CaO<sub>2</sub>), total venous content (CVO<sub>2</sub>) & AV content difference C(a-v)O<sub>2</sub>
 
 The sum total of O<sub>2</sub> bound to hemoglobin and dissolved in the plasma:
 
@@ -31,5 +31,50 @@ The sum total of O<sub>2</sub> bound to hemoglobin and dissolved in the plasma:
 
 :warning: The amount of dissolved O<sub>2</sub> is so small, do not take the time to calculate it.
 Calculate the amount bound to Hb and select the answer on that is slightly higher.
+
+### Total flow delivered by a high-flow O<sub>2</sub> delivery device
+
+Add the air O<sub>2</sub> entrainment ratio parts together and multiply by the
+flowmeter setting.
+
+> 40% air-entrainment mask running at 8 L/min.
+> 40% air O<sub>2</sub> ratio = 3:1; 3 + 1 = 4; 4 * 8 = 32 L/min
+
+### Determine actual flow rate of He/O<sub>2</sub> mixtures through an
+O<sub>2</sub> flowmeter
+
+To determine what to set the O<sub>2</sub> flowmeter on to deliver the ordered
+heliox flow, divide the factor 1.8 or 1.6 into the ordered flow.
+
+80/20 heliox mixture: multiply flowmeter reading by 1.8
+70/30 heliox mixture: multiply flowmeter reading by 1.6
+
+### Calculate relative humidity (RH)
+
+> RH = (Absolute humidity / Capacity) * 100
+
+- Absolute humidity is the amount of water in a given volume of gas.
+- Capacity is the total amount of water capable of being held in the gas at a
+  given temperature.
+
+### Calculate body humidity (BH)
+
+> BH = (Absolute humidity / 44 mg/L) * 100
+
+### Calculating humidity deficit (HD)
+
+> HD = 44 mg/L - Absolute humidity
+
+Expressed as a percentage:
+
+> Humidity deficit (mg/L) / 44 mg/L
+
+
+
+
+
+
+
+
 
 
