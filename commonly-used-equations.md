@@ -1,6 +1,6 @@
 # Commonly Used Equations
 
-### Time remaining in an O<sub>2</sub> cylinder
+### 1. Time remaining in an O<sub>2</sub> cylinder
 
 > Minutes remaining = ((Cylinder pressure - stop pressure)) * Cylinder factor) / Liter Flow
 
@@ -10,13 +10,13 @@ Cylinder factors:
 
 ---
 
-### Duration of flow for liquid O<sub>2</sub> systems
+### 2. Duration of flow for liquid O<sub>2</sub> systems
 
 > 344 * liquid wt (lb) / Flow
 
 ---
 
-### Calculate total arterial content (CaO<sub>2</sub>), total venous content (CVO<sub>2</sub>) & AV content difference C(a-v)O<sub>2</sub>
+### 3. Total arterial content (CaO<sub>2</sub>), total venous content (CVO<sub>2</sub>) & AV content difference C(a-v)O<sub>2</sub>
 
 The sum total of O<sub>2</sub> bound to hemoglobin and dissolved in the plasma:
 
@@ -34,7 +34,7 @@ Calculate the amount bound to Hb and select the answer on that is slightly highe
 
 ---
 
-### Total flow delivered by a high-flow O<sub>2</sub> delivery device
+### 4. Total flow delivered by a high-flow O<sub>2</sub> delivery device
 
 Add the air O<sub>2</sub> entrainment ratio parts together and multiply by the
 flowmeter setting.
@@ -44,8 +44,7 @@ flowmeter setting.
 
 ---
 
-### Determine actual flow rate of He/O<sub>2</sub> mixtures through an
-O<sub>2</sub> flowmeter
+### 5. Determine actual flow rate of He/O<sub>2</sub> mixtures through an O<sub>2</sub> flowmeter
 
 To determine what to set the O<sub>2</sub> flowmeter on to deliver the ordered
 heliox flow, divide the factor 1.8 or 1.6 into the ordered flow.
@@ -55,7 +54,7 @@ heliox flow, divide the factor 1.8 or 1.6 into the ordered flow.
 
 ---
 
-### Calculate relative humidity (RH)
+### 6. Relative humidity (RH)
 
 > RH = (Absolute humidity / Capacity) * 100
 
@@ -65,11 +64,11 @@ heliox flow, divide the factor 1.8 or 1.6 into the ordered flow.
 
 ---
 
-### Calculate body humidity (BH)
+### 7. Body humidity (BH)
 
 > BH = (Absolute humidity / 44 mg/L) * 100
 
-### Calculating humidity deficit (HD)
+### 8. Humidity deficit (HD)
 
 > HD = 44 mg/L - Absolute humidity
 
@@ -79,7 +78,7 @@ Expressed as a percentage:
 
 ---
 
-### Calculating Alveolar PO<sub>2</sub> (PAO<sub>2</sub>) using the alveolar air equation
+### 9. Alveolar PO<sub>2</sub> (PAO<sub>2</sub>) using the alveolar air equation
 
 Shortcut equation for the exam when the barometric pressure is 747 torr:
 
@@ -87,13 +86,13 @@ Shortcut equation for the exam when the barometric pressure is 747 torr:
 
 ---
 
-### Calculating P(A-a)O<sub>2</sub> (A-a gradient)
+### 10. P(A-a)O<sub>2</sub> (A-a gradient)
 
 > PAO<sub>2</sub> - PaO<sub>2</sub>
 
 ---
 
-### Calculating intrapulmonary shunt
+### 11. Intrapulmonary shunt
 
 > QS/QT = (PAO<sub>2</sub> - PaO<sub>2</sub> / 20) + 3% - 4%
 
@@ -138,7 +137,7 @@ Male: 106 + 6 (height in inches - 60)
 #### Exam Note :pencil2:
 
 This equation is used to determine the appropriate ventilator tidal volume
-V<sub>T</sub>. Once the wt is lbs is calculated, simply divide the wt in half
+V<sub>T</sub>. Once the wt in lbs is calculated, simply divide the wt in half
 and add a zero to the end. This presents a V<sub>T</sub> of approximately 10
 mL/kg of body wt.
 
@@ -175,7 +174,7 @@ Static compliance = V<sub>T</sub> / (Plateau pressure - PEEP)
 
 V<sub>T</sub> / Inspiratory time
 
-- Using liters for the V<sub>T</sub>. the anser will be in L/s.
+- Using liters for the V<sub>T</sub>, the answer will be in L/s.
 - Multiply by 60 to change to L/min. 
 
 ---
