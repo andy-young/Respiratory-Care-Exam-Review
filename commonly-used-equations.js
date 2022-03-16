@@ -29,7 +29,11 @@ const eq = {
         return `Total flow delivered: ${totalParts * flowRate} L/min.`
     },
     
-    HeO2Flow() {},
+    actualHeO2flowRate(orderedFlow) {
+        const correctedFlow_1 = orderedFlow / 1.8;
+        const correctedFlow_2 = orderedFlow / 1.6;
+        return `The actual flow rate of He/O2 mixtures is ${correctedFlow_1} Lpm or ${correctedFlow_2} Lpm.`;
+    },
     
     relativeHumidity(absHumidity, capacity) {
         const rh = (absHumidity / capacity) * 100;  // absHumidity is amount of H2O in a given volume of gas.
@@ -83,51 +87,69 @@ const eq = {
         return `IBW for female is ${female} lbs, and ${male} lbs for men`;
     },
     
-    TubingCompliance() {
-        
+    TubingCompliance(VT, PIP) {
+        const tc = VT / PIP;
+        return `The Tubing Compliance is ${tc}.`;
     },
     
-    VTdelivered() {
-        
+    VTdelivered(VT, TubingCompliance, PIP, PEEP) {
+        const DynamicCompliance = VT / (PIP - PEEP);
+        const StaticCompliance = VT / PlateauPressure;
     },
     
-    DynamicCompliance() {
-        
+    DynamicCompliance(VT, PIP, PEEP) {
+        const dc = VT / (PIP - PEEP);
+        return `The Dynamic Compliance is ${dc}.`;
     },
     
-    StaticCompliance() {
-        
+    StaticCompliance(VT, PlateauPressure, PEEP) {
+        const sc = VT / (PlateauPressure - PEEP);
+        return `The Static Compliance is ${sc}.`;
     },
     
-    InspFlowRate() {
-        
+    InspFlowRate(VT, iTime) {
+        const flowRate = VT / iTime;
+        return `The Inspiratory flowrate is ${flowRate} L/s or ${flowRate * 60} L/min.`;
     },
     
-    IEratio() {
-        
+    IEratio(InspFlowRate, MinuteVolume) { // MV = RR * VT
+        const IE = (InspFlowRate / MinuteVolume) - 1;
+        return `The I:E ration is 1:${IE}.`;
     },
     
-    ITime() {
-        
+    ITime(IEratio, VentilatorRate) {
+        const totalCycleTime = 60 / VentilatorRate;
+        const iTime = totalCycleTime / (IEratio + 1);
+        return `The ITime is ${iTime}.`;
     },
     
-    VDVTratio() {
-        
+    VDVTratio(PaCO2, PECO2) {
+        const deadSpaceVentilation = (PaCO2 - PECO2) / PaCO2;
+        return `The Dead Space Ventilation is ${deadSpaceVentilation} mL.`;
     },
     
-    desiredFiO2() {
-        
+    AirwayResistance(PIP, PlateauPressure, flowRate) {
+        const ar = (PIP - PlateauPressure) / flowRate;
+        return `The Airwary Resistance is ${ar}.`;
+    },
+
+    desiredFiO2(desiredPaO2, currentPaO2, FiO2) {
+        const desiredFiO2 = (desiredPaO2 * FiO2) / currentPaO2;
+        return `The Desired FiO2 is ${desiredFiO2}%.`;
     },
     
-    desiredVentRate() {
-        
+    desiredVentRate(currentRate, currentPaCO2, desiredPaCO2) {
+        const desiredRR = (currentRate * currentPaCO2) / desiredPaCO2;
+        return `The desired ventilator rate is ${desiredRR} breaths per minute.`;
     },
     
-    desiredVE() {
-        
+    desiredVE(currentVE, currentPaCO2, desiredPaCO2) {
+        const desiredMinuteVolume = (currentVE * currentPaCO2) / desiredPaCO2;
+        return `The desired Minute Volume (VE) is ${desiredMinuteVolume}.`;
     },
     
-    desiredVT() {
-        
+    desiredVT(currentVT, currentPaCO2, desiredPaCO2) {
+        const desiredTidalVolume = (currentVT * currentPaCO2) / desiredPaCO2;
+        return `The desired Tidal Volume is ${desiredTidalVolume} mL.`;
     }
 };
