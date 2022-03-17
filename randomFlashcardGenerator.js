@@ -224,6 +224,12 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
+function play() {
+  var audio = new Audio('https://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a');
+  return audio.play();
+}
+
+
 function randomCardGenerator(obj) {
     const keys = Object.keys(obj); // Array of abbreviations
     
@@ -232,6 +238,16 @@ function randomCardGenerator(obj) {
         let randomAbbr = keys[cardIndex];
         let correspondingDefinition = obj[randomAbbr];
         console.log(`${randomAbbr} ===> ${correspondingDefinition}`);
+        
+
+        let card = prompt(`Expand: ${randomAbbr}`);
+            console.log(card == obj[randomAbbr]);
+        
+        if (card == obj[randomAbbr]) {
+            return play();
+        }
+            
+        if (card == 'break') break;
     }
 }
 
