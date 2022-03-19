@@ -53,7 +53,7 @@ const abbreviations = {
     DPG: 'diphosphoglycerate',
     DPI: 'dry powder inhaler',
     EBUS: 'endobronchial ultrasound',
-    ECG: 'electrocardiography, -phic, - gram',
+    ECG: 'electrocardiogram',
     ECMO: 'extracorporeal membrane oxygenation',
     EEG: 'electroencephalogram',
     EIA: 'exercise-induced asthma',
@@ -91,7 +91,7 @@ const abbreviations = {
     HHN: 'handheld neblizer',
     HIV: 'human immunodeficiency virus',
     HMD: 'hyaline membrane disease',
-    HME: 'heat moisture exhcanger',
+    HME: 'heat moisture exchanger',
     IBW: 'ideal body weight',
     IC: 'inspiratory capacity',
     ICP: 'intracranial pressure',
@@ -127,7 +127,7 @@ const abbreviations = {
     MSAP: 'mean systemic arterial pressure',
     MVV: 'maximum voluntary ventilation',
     'Na+': 'sodium ion',
-    NAEPP: 'National Asthma Educatin Prevention Program',
+    NAEPP: 'National Asthma Education Prevention Program',
     NBRC: 'National Board for Respiratory Care',
     NG: 'nasogastric',
     NIF: 'negative inspiratory force',
@@ -137,17 +137,17 @@ const abbreviations = {
     O2: 'oxygen',
     OD: 'outside diameter',
     'P-A': 'postero-anterior',
-    'P(A-a)O2': 'alveolar-arterial oxygen presesur difference',
+    'P(A-a)O2': 'alveolar-arterial oxygen pressure difference',
     PAC: 'premature atrial contraction',
-    PaCO2: 'partial pressure of carbon dioxide, arterial',
+    PaCO2: 'partial pressure of arterial carbon dioxide',
     PALS: 'pediatric advanced life support',
-    PAO2: 'partial pressure of oxygen, alveolar',
-    PaO2: 'partial pressure of oxygen, arterial',
+    PAO2: 'partial pressure of alveolar oxygen',
+    PaO2: 'partial pressure of arterial oxygen',
     PAP: 'pulmonary artery pressure',
     PAW: 'mean airway pressure',
     PAWP: 'pulmonary artery wedge pressure',
     PB: 'barometric pressure',
-    PCO2: 'partial pressur of carbon dioxide',
+    PCO2: 'partial pressure of carbon dioxide',
     PCV: 'pressure control ventilation',
     PCWP: 'pulmonary capillary wedge pressure',
     PDA: 'paten ductus arteriosus',
@@ -224,30 +224,57 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
-function play() {
+function ding() {
   var audio = new Audio('https://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a');
+  return audio.play();
+}
+
+function evilLaugh() {
+  var audio = new Audio('https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg');
   return audio.play();
 }
 
 
 function randomCardGenerator(obj) {
-    const keys = Object.keys(obj); // Array of abbreviations
     
-    for (let i = 0; i <= keys.length; i++) {
-        let cardIndex = getRandomIntInclusive(0, keys.length);
+    const keys = Object.keys(obj); // Array of abbreviations
+    let correctTally = 0;
+    let wrongTally = 0;
+    
+    for (let i = 1; i <= keys.length; i++) {
+        let cardIndex = getRandomIntInclusive(1, keys.length);
         let randomAbbr = keys[cardIndex];
         let correspondingDefinition = obj[randomAbbr];
-        console.log(`${randomAbbr} ===> ${correspondingDefinition}`);
-        
+            console.log(`${randomAbbr} 👉🏻 ${correspondingDefinition}`);
 
-        let card = prompt(`Expand: ${randomAbbr}`);
-            console.log(card == obj[randomAbbr]);
-        
-        if (card == correspondingDefinition) {
-            console.log(play(), card, correspondingDefinition);
+        let answer = prompt(`${randomAbbr}`);
+
+        if (!correspondingDefinition) {
+            console.log(`Triggered deleted property: ${randomAbbr} 👉🏻 ${correspondingDefinition}`);
+            continue;
         }
         
-        if (card == 'break') break;
+        if (answer == 'break') {
+            evilLaugh();
+            return;
+        }
+    
+        if (answer === obj[randomAbbr]) {
+            correctTally++;
+            delete obj[randomAbbr];
+            console.log(`${i} of ${keys.length} \n
+                \t ${correctTally} Correct \n
+                \t ${wrongTally} Wrong`);
+        } else {
+            window.alert("WRONG! 😪");
+            wrongTally++;
+        }
+        
+        // if (answer == correspondingDefinition) {
+        //     console.log(ding(), answer, correspondingDefinition);
+        //     continue
+        // }
+        
     }
 }
 
