@@ -243,10 +243,10 @@ function randomCardGenerator(obj) {
         let card = prompt(`Expand: ${randomAbbr}`);
             console.log(card == obj[randomAbbr]);
         
-        if (card == obj[randomAbbr]) {
-            return play();
+        if (card == correspondingDefinition) {
+            console.log(play(), card, correspondingDefinition);
         }
-            
+        
         if (card == 'break') break;
     }
 }
