@@ -104,7 +104,7 @@ const abbreviations = {
     IPPB: 'intermittent psitive pressure breathing',
     IPV: 'intrapulmonary percussive ventilation',
     IRV: 'inspiratory reserve volume',
-    IT: 'implantiation tested',
+    IT: 'implantation tested',
     IV: 'intravenous',
     J: 'joules',
     JVD: 'jugular venous distention',
@@ -150,7 +150,7 @@ const abbreviations = {
     PCO2: 'partial pressure of carbon dioxide',
     PCV: 'pressure control ventilation',
     PCWP: 'pulmonary capillary wedge pressure',
-    PDA: 'paten ductus arteriosus',
+    PDA: 'patent ductus arteriosus',
     PE: 'pulmonary embolism',
     PEA: 'pulseless electrical activity',
     PEEP: 'positive end-expiratory pressure',
@@ -218,12 +218,6 @@ const abbreviations = {
     WBC: 'white blood cell'
 };
 
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-}
-
 function ding() {
   var audio = new Audio('https://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a');
   return audio.play();
@@ -234,48 +228,41 @@ function evilLaugh() {
   return audio.play();
 }
 
+function randomProperty(obj) {
+    const keys = Object.keys(obj);
+    const abbr = keys[ keys.length * Math.random() << 0 ];
+    const definition = obj[abbr];
+    return { abbr, definition };
+};
 
-function randomCardGenerator(obj) {
+function abbrTester(obj) {
+    let correct = 0;
+    let wrong = 0;
+    let count = 0;
+    let cardCount = Object.keys(obj).length;
     
-    const keys = Object.keys(obj); // Array of abbreviations
-    let correctTally = 0;
-    let wrongTally = 0;
-    
-    for (let i = 1; i <= keys.length; i++) {
-        let cardIndex = getRandomIntInclusive(1, keys.length);
-        let randomAbbr = keys[cardIndex];
-        let correspondingDefinition = obj[randomAbbr];
-            console.log(`${randomAbbr} 👉🏻 ${correspondingDefinition}`);
-
-        let answer = prompt(`${randomAbbr}`);
-
-        if (!correspondingDefinition) {
-            console.log(`Triggered deleted property: ${randomAbbr} 👉🏻 ${correspondingDefinition}`);
-            continue;
-        }
+    for (let key in obj) {
+        const card = randomProperty(obj);
+        const abbr = card.abbr;
+        const definition = card.definition;
         
-        if (answer == 'break') {
-            evilLaugh();
-            return;
-        }
-    
-        if (answer === obj[randomAbbr]) {
-            correctTally++;
-            delete obj[randomAbbr];
-            console.log(`${i} of ${keys.length} \n
-                \t ${correctTally} Correct \n
-                \t ${wrongTally} Wrong`);
+        console.log(definition); // <============ CHEAT! =============>
+        
+        const ans = prompt(abbr);
+        
+        if (ans == 'break') return evilLaugh();
+
+        if (ans == definition) {
+            correct++;
+            delete obj[abbr];
+            cardCount--;
         } else {
-            window.alert("WRONG! 😪");
-            wrongTally++;
+            wrong++;
         }
-        
-        // if (answer == correspondingDefinition) {
-        //     console.log(ding(), answer, correspondingDefinition);
-        //     continue
-        // }
-        
+        console.log(`correct: ${correct} \n wrong: ${wrong} \n remaining: ${cardCount}`);
     }
+        
+    return console.log('close fxn');
 }
 
-randomCardGenerator(abbreviations);
+abbrTester(abbreviations);
