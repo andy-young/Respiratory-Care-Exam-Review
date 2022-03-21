@@ -34,7 +34,7 @@ const abbreviations = {
     CL: 'lung compliance',
     'Cl-': 'chloride ion',
     CMV: 'continuous mechanical ventilation',
-    CNS: 'centreal nervous system',
+    CNS: 'central nervous system',
     CO: 'carbon monoxide',
     CO2: 'carbon dioxide',
     COPD: 'chronic obstructive pulmonary disease',
@@ -199,7 +199,7 @@ const abbreviations = {
     SPAG: 'small particle aerosol generator',
     SpO2: 'pulse oximetry',
     SV: 'stroke volume',
-    SvO2: 'hemoglobin stauration with oxygen, mixed',
+    SvO2: 'hemoglobin saturation with oxygen, mixed',
     SVR: 'systemic vascular resistance',
     TB: 'tuberculosis',
     TDP: 'therapist-driven protocol',
@@ -253,10 +253,12 @@ function abbrTester(obj) {
         if (ans == 'break') return evilLaugh();
 
         if (ans == definition) {
+            // ding();
             correct++;
             delete obj[abbr];
             cardCount--;
         } else {
+            window.alert("WRONG! 😪");
             wrong++;
         }
         console.log(`correct: ${correct} \n wrong: ${wrong} \n remaining: ${cardCount}`);
