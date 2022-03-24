@@ -212,7 +212,7 @@ const abbreviations = {
     VC: 'vital capacity of volume control (ventilation)',
     VD: 'dead space volume',
     V̇E: 'minute volume',
-    VO2: 'oxygen consumption per unit of time',
+    V̇O2: 'oxygen consumption per unit of time',
     'V/Q': 'ventilation perfusion ratio',
     VT: 'tidal volume',
     VTG: 'thoracic gas volume',
