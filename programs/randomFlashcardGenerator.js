@@ -10,8 +10,8 @@ const abbreviations = {
     AGA: 'appropiate for gestational age',
     AHI: 'apnea hypopnea index',
     AIDS: 'acquired immunodeficiency syndrome',
-    'A-P': 'antero posterior',
-    ARDS: 'acute respiratory destress syndrome',
+    'A-P': 'antero-posterior',
+    ARDS: 'acute respiratory distress syndrome',
     atm: 'standard atmosphere',
     AV: 'atroventricular',
     BAL: 'bronchoalveolar lavage',
@@ -97,7 +97,7 @@ const abbreviations = {
     ICP: 'intracranial pressure',
     ICU: 'intensive care unit',
     ID: 'internal diameter',
-    'I:E': 'inspiratory:expiratory (ratio)',
+    'I:E': 'inspiratory:expiratory ratio',
     INH: 'isoniazid',
     IO: 'intraosseous infusion',
     IPAP: 'inspiratory positive airway pressure',
@@ -136,7 +136,7 @@ const abbreviations = {
     NSAID: 'nonsteroidal antiinflammatory drug',
     'O₂': 'oxygen',
     OD: 'outside diameter',
-    'P-A': 'postero anterior',
+    'P-A': 'postero-anterior',
     'P(A-a)O₂': 'alveolar arterial oxygen pressure difference',
     PAC: 'premature atrial contraction',
     'PaCO₂': 'partial pressure of arterial carbon dioxide',
@@ -167,7 +167,7 @@ const abbreviations = {
     POC: 'point of care',
     Ppb: 'parts per billion',
     PPHN: 'persistent pulmonary hypertension of the newborn',
-    ppm: 'parts per billion',
+    ppm: 'parts per million',
     PROM: 'premature rupture of membranes',
     psi: 'pounds per square inch',
     psig: 'pounds per square inch gauge',
@@ -189,18 +189,18 @@ const abbreviations = {
     RSV: 'respiratory syncytial virus',
     RV: 'residual volume',
     SA: 'sinoatrial',
-    'SaO₂': 'hemoglobin saturation with oxygen, arterial blood',
+    'SaO₂': 'arterial hemoglobin oxygen saturation',
     SARS: 'sever acute respiratory syndrome',
     SBT: 'spontaneous breathing trial',
     SGA: 'small for gestational age',
     SIDS: 'sudden infant death syndrome',
     SIMV: 'synchronized intermittent mandatory ventilation',
     SMI: 'sustained max inspiration',
-    'SMI(device)': 'soft mist inhaler',
+    'SMI (device)': 'soft mist inhaler',
     SPAG: 'small particle aerosol generator',
     'SpO₂': 'pulse oximetry',
     SV: 'stroke volume',
-    'SvO₂': 'hemoglobin saturation with oxygen, mixed',
+    'SvO₂': 'mixed hemoglobin oxygen saturation',
     SVR: 'systemic vascular resistance',
     TB: 'tuberculosis',
     TDP: 'therapist driven protocol',
@@ -241,8 +241,8 @@ function abbrTester(obj) {
     let wrong = 0;
     let count = 0;
     let cardCount = Object.keys(obj).length;
-    
-    for (let key in obj) {
+
+    while (cardCount > 0) {
         const card = randomProperty(obj);
         const abbr = card.abbr;
         const definition = card.definition;
